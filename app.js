@@ -2,10 +2,9 @@ const express = require('express');
 const app = express();
 
 app.get('/', (request, response) => {
-    return
-    response.status(200)
+    return response.status(200)
     .json({
-        mensage:"Hello"
+        message: "Hello"
     });
 });
 
