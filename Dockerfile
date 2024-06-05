@@ -11,10 +11,12 @@ RUN mkdir -p /usr/src/app/tmp
 
 WORKDIR /usr/src/app
 
-COPY packag.json .
+COPY package.json .
 
 RUN npm install
 
 COPY . .
+
+EXPOSE 3000
 
 CMD ["npm", "start"]
