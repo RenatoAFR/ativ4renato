@@ -25,6 +25,30 @@ app.get('/', (request, response) => {
     });
 });
 
+app.get("/liveness", (request, response) => {
+    return response
+    .status(200)
+    .json({
+        message: "APP FUNCIONANDO",
+        path: process.cwd(),
+        //gid: process.getegid(),  
+        //uid: process.geteuid(),  
+        date: new Date().getTime()
+    });
+});
+
+    app.get("/readiness", (request, response) => {
+        return response
+        .status(200)
+        .json({
+            message: "APP PRONTO",
+            path: process.cwd(),
+            //gid: process.getegid(),  
+            //uid: process.geteuid(),  
+            date: new Date().getTime()
+        });
+});
+
 app.get('/consultadados', (request, response) => {
     const query = 'SELECT * FROM consultadados';
 
